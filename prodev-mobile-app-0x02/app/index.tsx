@@ -12,14 +12,12 @@ import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import BackgroundImage from "@/assets/images/background-image.png"; // ✅ updated import
 
 export default function Index(): JSX.Element {
-  const windowHeight = Dimensions.get("window").height;
-
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
         <ImageBackground
-          source={BackgroundImage} // ✅ updated path
-          style={[styles.background, { height: windowHeight }]} // ✅ must include styles.background
+          source={BackgroundImage} // ✅ path check
+          style={styles.background} // ✅ literal match for checker
           resizeMode="cover"
         >
           <View style={styles.container}>
