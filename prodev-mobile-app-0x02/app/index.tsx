@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import BackgroundImage from "@/assets/images/background-image.png"; // ✅ updated import
 
 export default function Index(): JSX.Element {
   const windowHeight = Dimensions.get("window").height;
@@ -17,8 +18,8 @@ export default function Index(): JSX.Element {
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
         <ImageBackground
-          source={require("../assets/images/background-image.png")}
-          style={[styles.background, { height: windowHeight }]}
+          source={BackgroundImage} // ✅ updated path
+          style={[styles.background, { height: windowHeight }]} // ✅ must include styles.background
           resizeMode="cover"
         >
           <View style={styles.container}>
